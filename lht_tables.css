@@ -17,7 +17,20 @@
    Mobile Styles: 0px to 640px 
    ===============================
 */
-
+@media only screen and (max-width: 640px) {
+    table, tbody, tr, td, th, caption {
+        display: block;
+    }
+    thead h1 {
+        display: none;
+    }
+    table {
+        color: white;
+        background: medium grey;
+        font-size: 1.5em;
+        height: 2em;
+    }
+}
 
 
 
