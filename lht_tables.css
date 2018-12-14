@@ -17,19 +17,44 @@
    Mobile Styles: 0px to 640px 
    ===============================
 */
+/* This is te media query for phones */
 @media only screen and (max-width: 640px) {
     table, tbody, tr, td, th, caption {
         display: block;
     }
-    thead h1 {
+    thead, h1 {
         display: none;
     }
-    table {
+    /* This makes it so thead and h1 wont display on the page */
+    caption {
         color: white;
-        background: medium grey;
+        background-color: rgb(122, 127, 130);
         font-size: 1.5em;
-        height: 2em;
+        line-height: 2em;
     }
+    /* Edited the big Date on the page */
+    td {
+        border: 1px dotted gray;
+        color: rgb(11, 12, 145);
+        position: relative;
+        padding-left: 40%;
+        min-height: 40px;
+    }
+    /* Adds a small gray dotted border to the page */
+    tr:nth-of-type(odd) {
+        background-color: rgb(255, 235, 178);
+        border: 2px solid gray;
+    }
+    /* all these do really is display a certain color on screen */
+    td::before {
+        content: attr(data-date);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 5px;
+        width: 40%;
+    }
+
 }
 
 
@@ -38,3 +63,49 @@
    Tablet and Desktop Styles: greater than 640px
    =============================================
 */
+/* Edits how the page looks for tablets and computers */
+@media only screen and (min-width: 641px) {
+    table {
+        background-image: url(lht_photo1.png);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: 40%;
+        border: 6px double rgb(154, 64, 3);
+        border-collapse: collapse;
+        margin: 20px auto 20px auto;
+        table-layout: fixed;
+        width: 85%;
+    }
+    /* That edits styles for the whole table itself */
+    th, td {
+        border: 1px solid gray;
+        font-size: 0.85em;
+        font-weight: normal;
+        padding: 5px;
+        text-align: top;
+        width: 14.28%;
+        word-wrap: break-word;
+    }
+    /* the table data cell element is just changing the color */
+    td {
+        background-color: rgba(171, 171, 171, 0.6);
+        color: rgb(11, 12, 145);
+    }
+    td[data-date*="Feb"] {
+        background: rgba(232, 214, 148, 0.6);
+        box-shadow: gray 0px 0px 20px inset;
+    }
+    /* The caption displays items at the top of the table basically */
+    caption {
+        caption-side: top;
+        text-align: center;
+        padding-bottom: 10px;
+        font-size: 1.2em;
+        letter-spacing: 3px;
+    }
+    /* changing the header cells colors */
+    th {
+        background: rgb(154, 64, 3);
+        color: white;
+    }
+}
